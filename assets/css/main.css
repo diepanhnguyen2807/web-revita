@@ -5036,7 +5036,7 @@ age-container #owl-main .owl-next {
   color: #666666;
   font-size: 13px;
   padding-right: 4px;
-  ont-family: FontAwesome;
+  font-family: FontAwesome;
 }
 .blog-page .blog-post .author:before,
 .blog-page .sidebar .sidebar-module-container .sidebar-widget .blog-post .author:before {
