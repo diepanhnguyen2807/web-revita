@@ -484,6 +484,10 @@ img[src="assets/images/blank.gif"] {
   top: -57px;
   display:none
 }
+
+.logo img {
+  width: 15rem;
+}
 .featured-product {
   margin-bottom:30px;
       background-color: #fff;
