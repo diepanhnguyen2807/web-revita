@@ -1,4 +1,4 @@
-fetch("navbar.html")
+fetch("components/navbar.html")
     .then((response) => response.text())
     .then((html) => {
         const navbar = document.getElementById("navbar");
@@ -8,7 +8,7 @@ fetch("navbar.html")
         // }
     })
 
-fetch("topnav.html")
+fetch("components/topnav.html")
     .then((response) => response.text())
     .then((html) => {
         const topnav = document.getElementById("topnav");
@@ -18,7 +18,7 @@ fetch("topnav.html")
         // }
     })
 
-fetch("footer.html")
+fetch("components/footer.html")
     .then((response) => response.text())
     .then((html) => {
         const footer = document.getElementById("footer");

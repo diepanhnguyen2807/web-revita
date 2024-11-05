@@ -1122,7 +1122,7 @@ a {
 
 }
 .top-bar .cnt-account ul > li a {
-  color:rgba(255,255,255,0.8);
+  color:rgba(255,255,255,1);
   padding: 0px;
   font-weight: 400;
   -webkit-transition: all 0.2s linear 0s;
@@ -1161,7 +1161,7 @@ a {
   display: inline-block;
 }
 .top-bar .cnt-block .list-inline > li > a .value {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,1);
   margin: 2px 4px 2px 7px;
 }
 .top-bar .cnt-block .list-inline > li > a:hover,
