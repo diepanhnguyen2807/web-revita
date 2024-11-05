@@ -1,2 +1,2 @@
-# web-grevita
-Website thương mại điện tử cho nhãn hàng thời trang Grevita
+# web-revita
+Website thương mại điện tử cho nhãn hàng thời trang Revita
