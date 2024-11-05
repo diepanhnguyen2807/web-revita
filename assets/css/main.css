@@ -3319,7 +3319,7 @@ age-container #owl-main .owl-next {
 
 }
 
-.toggle-footer {color:#666}
+.toggle-footer {color:#c0c0c0}
 .toggle-footer a {margin-left:0px!important}
 .toggle-footer a:before {display:none}
 .toggle-footer i{background:#333; border-radius:2px}
@@ -3329,7 +3329,7 @@ age-container #owl-main .owl-next {
 .footer .footer-bottom .module-body ul li a {
   font-size: 13px;
   line-height: 30px;
-  color: #666666;
+  color: #c0c0c0;
   position: relative;
   margin-left: 23px;
   display: block;
