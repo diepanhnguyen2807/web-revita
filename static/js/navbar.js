@@ -1,4 +1,4 @@
-fetch("components/navbar.html")
+fetch("../../templates/components/navbar.html")
     .then((response) => response.text())
     .then((html) => {
         const navbar = document.getElementById("navbar");
@@ -8,7 +8,7 @@ fetch("components/navbar.html")
         // }
     })
 
-fetch("components/topnav.html")
+fetch("../../templates/components/topnav.html")
     .then((response) => response.text())
     .then((html) => {
         const topnav = document.getElementById("topnav");
@@ -18,7 +18,7 @@ fetch("components/topnav.html")
         // }
     })
 
-fetch("components/footer.html")
+fetch("../../templates/components/footer.html")
     .then((response) => response.text())
     .then((html) => {
         const footer = document.getElementById("footer");
