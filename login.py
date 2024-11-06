@@ -72,15 +72,6 @@ def sign_in():
         else: return "User not found!", 404
     return render_template('sign-in.html')
 
-@app.route('/home')
-def home():
-    return "Welcome to the home page!"
-
-        # if check_exists(email, password):
-        #     session['email'] = email
-        # return redirect(url_for('home'))
-    # return render_template('sign-in.html')
-
 
 # Ktra kết nối với db
 # @app.route('/users',methods=['GET'])
@@ -111,4 +102,4 @@ def logout():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(port=5002)
+    app.run(debug=True)
