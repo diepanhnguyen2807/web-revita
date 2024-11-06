@@ -2,50 +2,59 @@ from flask import Flask, render_template, request, redirect, session, url_for
 import sqlite3
 
 app = Flask(__name__)
-app.secret_key = 'hehehe'
-
-@app.route('/')
-def index():
-    return 'This is home page'
+app.secret_key = 'hehehe'  # Use a strong secret key in production
 
 
-@app.route('/sign-in', methods=['POST'])
+# Route for the sign-in page
+@app.route('/sign-in', methods=['GET', 'POST'])
 def sign_in():
-    # Khi nhận dữ liệu từ hành vi post, sau khi nhận dữ liệu
-    # từ session sẽ gọi định tuyến sang trang index
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        # Store 'username' in the session
-        obj_user = get_obj_user(email, password)
-        if obj_user is not None:
-            obj_user = {
-                "id": obj_user[0],
-                "name": obj_user[1],
-                "email": obj_user[2],
-                "phone_number": obj_user[3],
-                "password": obj_user[4]
+
+        # Validate user credentials
+        user = get_user_by_email_password(email, password)
+
+        if user:
+            # Store user data in session
+            session['user'] = {
+                'id': user[0],
+                'email': user[1],
+                'name': user[2],
+                'phone_number': user[3],
+                'password': user[4]
             }
-            session['current_user'] = obj_user
-        return redirect(url_for('index'))
-    # Trường hợp mặc định là vào trang login
-    return render_template('sign-in.html')
+            return redirect(url_for('home'))  # Redirect to the home page or dashboard
+        else:
+            # Invalid credentials, show an error message
+            return render_template('sign-in.html', error="Invalid email or password")
 
-def get_obj_user(email, password):
-    result = None;
-    sqldbname = 'db/users.db'
-    # Khai bao bien de tro toi db
-    conn = sqlite3.connect(sqldbname)
+    return render_template('sign-in.html')  # GET request, display the sign-in page
+
+
+# Function to fetch user data from the database based on email and password
+def get_user_by_email_password(email, password):
+    conn = sqlite3.connect('db/users.db')
     cursor = conn.cursor()
-    # sqlcommand = "Select * from storages where "
-    sqlcommand = "Select * from users where email = ? and password = ?"
-    cursor.execute(sqlcommand,(email,password))
-    # return object
-    obj_user = cursor.fetchone()
-    if obj_user is not None:
-        result = obj_user
-    conn.close()
-    return result;
 
+    query = "SELECT * FROM users WHERE email = ? AND password = ?"
+    cursor.execute(query, (email, password))
+    user = cursor.fetchone()
+
+    conn.close()
+
+    return user
+
+
+# Home route for logged-in users
+@app.route('/home')
+def home():
+    if 'user' in session:
+        return f"Hello {session['user']['name']}! You are logged in."
+    else:
+        return redirect(url_for('sign_in'))  # Redirect to sign-in if not logged in
+
+
+# Run the application
 if __name__ == '__main__':
     app.run(debug=True)
