@@ -7,7 +7,7 @@ app.secret_key = 'hehehe'
 sqldbname = 'db/users.db'
 
 
-@app.route('/')
+@app.route('/register')
 def index():
     return render_template('sign-in.html',
                            name_error="",
@@ -17,8 +17,7 @@ def index():
                            confirm_password_error="",
                            registration_success="")
 
-
-@app.route('/register', methods=['POST'])
+@app.route('/register/succeeded', methods=['POST'])
 def register():
     name = request.form['name']
     email = request.form['email']
