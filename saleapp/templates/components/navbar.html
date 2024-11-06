@@ -110,8 +110,8 @@
             <!-- /.contact-row -->
             <!-- ============================================================= SEARCH AREA ============================================================= -->
             <div class="search-area">
-              <form>
-                <input class="search-field" placeholder="Search here..." />
+              <form method="POST" action="{{ url_for(search_results) }}">
+                <input class="search-field" placeholder="Search here..." type="search" aria-label="Search" name="searched"/>
                 <a class="search-button" href="#"></a>
               </form>
             </div>
