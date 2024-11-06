@@ -1,15 +1,4 @@
 BEGIN TRANSACTION;
-CREATE TABLE IF NOT EXISTS "products" (
-	"ProductId"	INT,
-	"Category"	VARCHAR(512),
-	"ProductType"	VARCHAR(512),
-	"Price"	VARCHAR(512),
-	"Colour"	VARCHAR(512),
-	"Usage"	VARCHAR(512),
-	"ProductTitle"	VARCHAR(512),
-	"Image"	VARCHAR(512),
-	"ImageURL"	VARCHAR(512)
-);
 INSERT INTO "products" VALUES (1,'Shoes','Flats','$149.00','Black','Casual','Carlton London Women Black & Gold Toned Flats','59051.jpg','http://assets.myntassets.com/v1/images/style/properties/Carlton-London-Women-Black-Gladiator-Sandals_b8f695202ccc1889f65d57b4000a888f_images.jpg');
 INSERT INTO "products" VALUES (2,'Shoes','Flats','$199.00','Brown','Casual','Catwalk Women Leather Brown Flats','2886.jpg','http://assets.myntassets.com/v1/images/style/properties/94a9deea53125663d9bbe61cb38b84b4_images.jpg');
 INSERT INTO "products" VALUES (3,'Shoes','Heels','$195.00','Black','Casual','Rocia Women Black Flats','54118.jpg','http://assets.myntassets.com/v1/images/style/properties/8d6fd53f28e010658cdf5c14c43d0cb0_images.jpg');
