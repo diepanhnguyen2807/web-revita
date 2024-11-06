@@ -5,7 +5,7 @@ app = Flask(__name__, static_url_path='/static')
 app.secret_key = "hehehe"
 
 # Load JSON data
-with open('db/products.json') as f:
+with open('saleapp/db/products.json') as f:
     data = json.load(f)
 
 @app.route("/cart/add", methods=["POST"])
