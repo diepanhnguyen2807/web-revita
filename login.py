@@ -26,15 +26,15 @@ def check_exists(username, password):
     conn.close()
     return result
 
-@app.route('/login', methods=['GET','POST'])
-def login():
+@app.route('/sign-in', methods=['GET','POST'])
+def sign_in():
     if request.method == 'POST':
-        username = request.form['username']
+        email = request.form['email']
         password = request.form['password']
-        if check_exists(username, password):
-            session['username'] = username
-        return redirect(url_for('index'))
-    return render_template('login.html')
+        if check_exists(email, password):
+            session['email'] = email
+        return redirect(url_for('home'))
+    return render_template('sign-in.html')
 
 @app.route('/logout')
 def logout():
