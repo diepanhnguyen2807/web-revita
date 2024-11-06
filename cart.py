@@ -1,7 +1,7 @@
 import json
 from flask import Flask, request, render_template, session, url_for, redirect, jsonify
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__, static_url_path='static')
 app.secret_key = "hehehe"
 
 # Load JSON data
